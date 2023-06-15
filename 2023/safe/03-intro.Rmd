@@ -1,13 +1,118 @@
 # Introduction
 
-Scientific name
-Description of general biology and distribution
-Description of key life history characteristics specific to stock assessments (e.g., special features of reproductive biology)
-Evidence of stock structure, if any
+Octopuses are marine mollusks in the class Cephalopoda. 
+The cephalopods, whose name literally means head foot, have their appendages attached to the head and include octopuses, squids, and nautiluses. 
+The octopuses (order Octopoda) have only eight appendages or arms, and unlike other cephalopods, they lack shells, pens, and tentacles. 
+There are two groups of Octopoda, the cirrate and the incirrate. 
+The cirrate have cirri (cilia-like strands on the suckers), possess paddle-shaped fins suitable for swimming in their deep ocean pelagic and epibenthic habitats [@Boyle2005], and are much less common than the incirrate which contain the more traditional forms of octopus. 
+Octopuses are found in every ocean in the world and range in size from less than 20 cm (total length) to over 3 m (total length); the latter is a record held by *Enteroctopus dofleini* [@Wulker1910]. 
+*E. dofleini* is one of at least nine species of octopus (**Table 22.1**) found in the Bering Sea, including one newly identified species. 
+Members of these nine species represent seven genera and can be found from less than 10-m to greater than 1500-m depth. 
+All but one, *Japetella diaphana*, are benthic octopuses. 
+The mesopelagic *Vampyroteuthis infernalis* is a cephalopod that shares similarities with both octopuses and squids, but is included in the octopus assessment. 
+The state of knowledge of octopuses in the BSAI, including the true species composition, is very limited.
+
+In the Bering Sea octopuses are found from subtidal waters to deep areas near the outer slope (**Figure 22.1**). 
+The highest species diversity is along the shelf break between 200 – 750 m. 
+The observed catches of octopus from both commercial fisheries and AFSC trawl surveys indicates few octopus occupy federal waters of Bristol Bay and the inner front region. 
+Some octopuses have been observed in the middle front, especially in the region south of the Pribilof Islands. 
+The majority of observed commercial and survey hauls containing octopus are concentrated in the outer front region and along the shelf break, from the horseshoe at Unimak Pass to the northern limit of the federal regulatory area. 
+Octopus have also been observed throughout the western GOA and Aleutian Island chain. 
+The spatial distribution of commercial octopus catch is dependent primarily on the use of pot gear for Pacific cod and is concentrated in the three statistical areas near Unimak Pass.
 
 
 ## Biology and Distribution
 
+In general, octopus life spans are either 1-2 years or 3-5 years depending on the species. 
+Life histories of six of the nine species in the Bering Sea are largely unknown. 
+The giant Pacific octopus, *Enteroctopus dofleini*, has been studied extensively, and its life history will be reviewed here. 
+General life histories of the other octopus species are inferred from what is known about other members of the genus.
+
+*Giant Pacific Octopus*  
+
+*Enteroctopus dofleini* samples collected during research in the Bering Sea indicate that this species is reproductively active in the fall with peak spawning occurring in the winter to early spring months [@Brewer2016].
+Like most species of octopods, *E. dofleini* are terminal spawners, dying after mating (males) and the hatching of eggs (females) [@Jorgensen2009]. 
+*Enteroctopus dofleini* within the Bering Sea have been found to mature between 10 to 13 kg with 50% maturity values of 12.8 kg for females and 10.8 kg for males [@Brewer2012]. 
+*Enteroctopus dofleini* are problematic to age due to a documented lack of beak growth checks and soft chalky statoliths [@Robinson1986].
+Therefore, the determination of age at maturity is difficult for this species. 
+In Japan this species is estimated to mature at 1.5 to 3 years and at similar size ranges [@Kanamaru1967; @Mottet1975]. 
+Within the Bering Sea, female *E. dofleini* show significantly larger gonad weight and maturity in the fall months [@Brewer2012]. 
+Due to differences in the timing of peak gonad development between males and females it is likely that females have the capability to store sperm. 
+This phenomenon has been documented in aquarium studies of octopus in Alaska and British Columbia [@Gabe1975].
+Fecundity for this species in the Gulf of Alaska ranges from 40,000 to 240,000 eggs per female with an average fecundity of 106,800 eggs per female [@Conrath2014]. 
+Fecundity was significantly and positively related to the size of the female. 
+The fecundity of *E. dofleini* within this region is higher than that reported for other regions. 
+The fecundity of this species in Japanese waters has been estimated at 30,000 to 100,000 eggs per female [@Kanamaru1964; @Mottet1975; @Sato1996]. 
+@Gabe1975 estimated that a female in captivity in British Columbia laid 35,000 eggs. 
+Hatchlings are approximately 3.5 mm. 
+@Mottet1975 estimated survival to 6 mm at 4% while survival to 10 mm was estimated to be 1%; mortality at the 1 to 2-year stage is also estimated to be high [@Hartwick1983]. 
+Large numbers of planktonic paralarvae of this species have been captured in offshore waters of the Aleutian Islands during June through August. 
+These juveniles were assumed have hatched in the coastal waters along the Aleutian Islands and transported by the Alaska Stream [@Kubodera1991]. 
+Since the highest mortality occurs during the larval stage it is likely that ocean conditions have the largest effect on the number of *E. dofleini* in the Bering Sea, and large interannual fluctuations in numbers of *E. dofleini* should be expected. 
+Based on larval data, *E. dofleini* is the only octopus in the Bering Sea with a planktonic larval stage.
+
+*Other Octopus Species*  
+*Sasakiopus salebrosus* is a small benthic octopus recently identified from the Bering Sea slope in depths ranging from 200 to1200 m [@Jorgensen2010]. 
+It was previously identified in surveys as *Benthoctopus* sp. or as *Octopus* sp. 
+In recent groundfish surveys of the Bering Sea slope this was the most abundant octopus collected; multiple specimens were collected in over 50% of the tows. 
+*Sasakiopus salebrosus* is a small-sized species with a maximum total length < 25 cm. 
+Mature females collected in the Bering Sea carried 100 to 120 eggs [@Laptikhovsky1999]. 
+Hatchlings and paralarvae have not been collected or described [@Jorgensen2009].
+
+*Benthoctopus leioderma* is a medium sized species, with a maximum total length of approximately 60 cm and a maximum weight of approximately 3 kg. 
+Its life span is unknown. 
+It occurs from 250 to 1,400 m and is found throughout the shelf break region. 
+It is a common octopus and often occurs in the same areas where *E. dofleini* are found. 
+The eggs are brooded by the female, but mating and spawning times are unknown. 
+Members of this genus in the North Pacific Ocean have been found to attach their eggs to hard substrate under rock ledges and crevices [@Voight2000]. 
+*Benthoctopus* tend to have small numbers of eggs (< 200) that develop into benthic hatchlings.
+
+*Benthoctopus oregonensis* is larger than *B. leioderma*, with a maximum total length of approximately 1 m. 
+This is the second largest octopus in the Bering Sea and based on size could be confused with *E. dofleini*. 
+We know very little about this species of octopus. 
+Other members of this genus brood their eggs, and we would assume the same for this species. 
+The hatchlings are demersal and likely much larger than those of *E. dofleini*. 
+The samples of *B. oregonensis* all come from deeper than 500 m. 
+This species is the least collected incirrate octopus in the Bering Sea and may occur in depths largely outside of the sampling range of AFSC trawl surveys.
+
+*Graneledone boreopacifica* is a deep water octopus with only a single row of suckers on each arm (the other benthic incirrate octopuses have two rows of suckers). 
+It is most commonly collected north of the Pribilof Islands but occasionally is found in the southern portion of the shelf break region. 
+This species has been shown to occur at hydrothermal vent habitats and prey on vent fauna [@Voight2000]. 
+Samples of *G. boreopacifica* all come from deeper than 650 m, and this deep-water species has not been found on the continental shelf. 
+*Graneledone* species have also been shown to individually attach eggs to hard substrate and brood their eggs throughout development. 
+Recently collected hatchlings of this species were found to be very large (55 mm long) and advanced [@Voight2004], and this species has been shown to employ multiple paternity [@Voight2009].
+
+*Opisthoteuthis californiana* is a cirrate octopus with fins and cirri (on the arms). 
+It is common in the Bering Sea but would not be confused with *E. dofleini*. 
+It is found from 300 to 1,100 m and likely common over the abyssal plain. 
+*Opisthoteuthis californiana* in the northwestern Bering Sea have been found to have a protracted spawning period with multiple small batch spawning events. 
+Potential fecundity of this species was found to range from 1,200 to 2,400 oocytes [@Laptikhovsky1999]. 
+There is evidence that *Opisthoteuthis* species in the Atlantic undergo ‘continuous spawning’ with a single, extended period of egg maturation and a protracted period of spawning [@Villanueva1992].
+Other details of its life history remain unknown.
+
+*Japetella diaphana* is a small pelagic octopus. 
+Little is known about members of this family. 
+In Hawaiian waters gravid females are found near 1,000 m and brooding females near 800 m. 
+Hatchlings have been observed to be about 3 mm mantle length [@Young2008]. 
+This is not a common octopus in the Bering Sea and would not be confused with *E. dofleini*.
+
+*Vampyroteuthis infernalis* is uncommon in the BSAI, being reported only from the slope immediately north of the easternmost Aleutian Islands [@Jorgensen2009]. 
+It is easily distinguishable from other species of octopus by its black coloration. Very little is known about its reproduction or early life history. 
+An 8 mm hatchling with yolk was captured near the Hawaiian Islands indicating an egg size of around 8 mm for this species [@Young1999].
+
+In summary, there are nine species of octopus present in the BSAI, and the species composition of natural communities is not well known. 
+It is likely that some species, particularly *G. boreopacifica*, are primarily distributed at greater depths than are commonly fished. 
+At depths less than 200 meters *E. dofleini* appears to be the most abundant species but could be found with *S. salebrosus*, or *B. leioderma*.
+
+
+
 ## Stock Structure
+The giant Pacific octopus is found throughout the northern Pacific Ocean from northern Japanese waters, throughout the Aleutian Islands, the Bering Sea, the Gulf of Alaska, and along the Pacific Coast as far south as northern California [@Kubodera1991]. 
+The stock structure and phylogenetic relationships of this species throughout its range have not been well studied.
+Three sub-species have been identified based on large geographic ranges and morphological characteristics including *E. dofleini dofleini* (far western North Pacific), *E. dofleini apollyon* (waters near Japan, Bering Sea, Gulf of Alaska), and *E. dofleini martini* (eastern part of their range, @Pickford1964). 
+A genetic study [@Toussaint2012] indicated the presence of a cryptic species of *E. dofleini* in Prince William Sound, Alaska, but did not find substantial genetic differences between specimens from Dutch Harbor and Kodiak. 
+There is little information available about the migration and movements of this species in Alaska waters. 
+@Kanamaru1964 proposed that *E. dofleini* move to deeper waters to mate during July through October and then move to shallower waters to spawn during October through January in waters off of the coast of Hokkaido, Japan. 
+Studies of movement in British Columbia [@Hartwick1984] and south central Alaska [@Scheel2012] found no evidence of a seasonal or directed migration for this species, but longer term tagging studies may be necessary to obtain a complete understanding of the migratory patterns of this species.
 
 

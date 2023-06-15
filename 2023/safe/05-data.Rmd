@@ -38,9 +38,26 @@ data.frame(Source = c(rep("NMFS Groundfish survey", 2),
 
 ### Catch
 
-Catch as used in the model (by area and gear if that is how it is used in the model). 
-This table may omitted if this table simply duplicates the catch table shown under “Management units/measures”).
-In an appendix, present removals from sources other than those that are included in the Alaska Region’s official estimate of catch (e.g., removals due to scientific surveys, subsistence fishing, recreational fishing, fisheries managed under other FMPs.)  
+Prior to 2003, there was little market for octopus and no directed fishery in federal waters; historical rates of incidental catch (prior to 2003) do not necessarily reflect fishing patterns where octopus are part of retained market catch. 
+Estimates of incidental catch **(Tables 22.2 and 22.3)** suggest substantial year-to- year variation in harvest, some of which is due to changing regulations and market forces in the Pacific cod fishery. 
+A large interannual variability in octopus abundance is also consistent with anecdotal reports [@Paust1988, @Paust1997] and with life-history patterns for *E. dofleini*.
+
+Reported harvest of octopus from incidental catch in state fisheries in the BSAI ranged from 18-69 t between 1996 and 2002 but was 100-300 t in 2003-2006 [@Sagalkin2011]. 
+From 1992-2002 total incidental catch of octopus in federal waters, estimated from observed hauls, was generally between 100 and 400 t **(Table 22.2)**. 
+Since 2003 the total octopus catch in both state and federal waters (including discards) has been estimated using the NMFS Alaska Regional Office catch accounting system. 
+Total incidental catch during this period has continued to be 200-400 tons in most years, with very high year-to year variation from 2006 - 2018. 
+Total catch was generally high (300-500 tons) in 2003-2006 and low (<200 tons) in 2007-2010, with only 72 tons caught in 2009. 
+The low octopus catch during this period may be a result of a decline in processor demand and a drop in cod pot-fishing effort due to a decline in the market price of cod and increased fuel prices. 
+Catch in 2011 was the highest observed to that date, reaching 534 tons by mid-October. 
+On September 1, 2011 the NMFS Regional Office prohibited retention of octopus because the TAC of 150 tons had been reached. 
+Catch rates for Pacific cod and incidental catch rates for octopus were both very high during fall 2011 and the octopus OFL of 528 t was reached; the NMFS closed directed fishing for Pacific cod with pot gear in the BSAI on October 21, 2011. 
+As in previous years, the majority of the 2011 catch came from Pacific cod fisheries, primarily pot fisheries in statistical reporting areas 519, 517, and 509 **(Table 22.3 and Figure 22.2)**.
+
+Incidental catch rates were low for 2012 and 2013 but were over 400 t in 2014 through 2016. 
+Catches have declined during 2016-2018 but the 2020 catch is on track to be the largest in the time series. 
+All catches were still nearly an order of magnitude below the recommended ABC. 
+The percentage of BSAI octopus retained is variable and has increased since 2016 (34% in 2017).
+
 
 ### Age and Size Composition
 

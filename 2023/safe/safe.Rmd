@@ -1,12 +1,12 @@
 ---
 params: 
-  chapter: 10
-  species: "rougheye and black spotted rockfish"
+  chapter: 22
+  species: "octopus"
   species_complex: "yes"
-  area: "Gulf of Alaska"
+  area: "Bering Sea and Aleutian Islands"
   tier: 3
-author: "Benjamin C. Williams, Peter-John F. Hulson, Chris R. Lunsford"
-date: "November 2022"
+author: "Lee Chronin-Fine, Benjamin C. Williams, Sandra Lowe"
+date: "November 2023"
 
 # don't do anything below this line unless you are cool with the consequences
 output:

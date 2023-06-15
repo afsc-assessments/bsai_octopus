@@ -1,82 +1,44 @@
 # Analytical approach
 
 ## General Model Structure
->Description of overall modeling approach (e.g., age/size structured versus biomass dynamic, maximum likelihood versus Bayesian)
-If standardized software (e.g., Stock Synthesis) is used, give reference to technical documentation where variables and equations are described.  If standardized software is not used, then list variables and equations used in the assessment model(s) in tables or appendices as appropriate.
 
+he available data do not support quantitative catch-at-age modeling for either individual species of octopus in the BSAI or for the multi-species complex, and reliable biomass estimates are unavailable for Tier 5 methods. 
+Therefore, we continue to use the alternative Tier 6 method, based on a predation-based estimate of total natural mortality (N), **(reference the SAFE this was first used)**.
 
-This assessment is based on a statistical age-structured model with the catch equation and population dynamics model as described in @Fournier1982 and elsewhere (e.g., @Hilborn1992; @Schnute1995, @McAllister1997). 
-The catch in numbers at age in year $t (C_{t,a})$ and total catch biomass $(Y_t)$ can be described as:
+The 2011 BSAI octopus assessment introduced the methodology for examining population trends in octopus that is used **(reference 2011 SAFE)**. 
+This approach uses the underlying model from Tier 5, where MSY is obtained at ½ the total natural mortality (in tons). 
+For Tier 5 stocks, the total natural mortality is usually estimated as the product of biomass (*B*) and an instantaneous mortality rate (*M*), $N=MB$. 
+We use the letter *N* for the total natural mortality in tons to distinguish it from the *M* (continuous individual mortality rate) that is used widely in other stock assessment models. 
+This method uses data from the AFSC’s food habits database to estimate the total amount of octopus consumed by their main predator in the BSAI: Pacific cod. 
+Because Pacific cod is an important commercial species, the AFSC food habits group collects a large number of Pacific cod stomachs for diet analysis. 
+The amount of octopus consumed by Pacific cod is a conservative estimate of the total natural mortality *N* for octopus, since it does not include mortality from other predators (i.e., marine mammals) or non-predation mortality. 
+**THis published?? This novel approach for setting annual catch limits for data-poor prey species has been presented at scientific conferences and is expected to be published next year**. 
+This analysis was originally performed in 2011 using stomach data through 2008 [@Conners2011]. 
+The consumption estimator was updated for the 2016 assessment [@Conners2016], and is again updated for this assessment with data through **2022**.
 
-
-
-\begin{align}
-    C_{t,a}     &= \frac{F_{t,a}}{Z_{t,a}} \left(1 - e^{-Z_{t,a}}\right) N_{t,a}, &1 \le t \le T, 1 \le a \le A \\
-    N_{t+1,a+1} &= N_{t,a-1} e^{-Z_{t,a-1}},                                      &1 \le t \le T, 1 \le a < A   \\
-    N_{t+1,A}   &= N_{t,A-1} e^{-Z_{t,A-1}} + N_{t,A} e^{-Z_{t,A}} ,              &1 \le t \le T                \\
-    Z_{t,a}     &= F_{t,a} + M_{t,a}                                              &                             \\
-    C_{t,.}     &= \sum_{a=1}^A{C_{t,a}}                                          &                             \\
-    p_{t,a}     &= \frac{C_{t,a} } {C_{t,.} }                                     &                             \\
-    Y_{t}       &= \sum_{a=1}^A{w_{t,a}C_{t,a}}                                   &                             \\
-\end{align}
-
-where
-
-|           |                       |
-|:----------|:----------------------|
-|$T$       | is the number of years, |
-|$A$       | is the number of age classes in the population, |
-|$N_{t,a}$ | is the number of fish age $a$ in year $t$, |
-|$C_{t,a}$ | is the catch of age class $a$ in year $t$, |
-|$p_{t,a}$ | is the proportion of the total catch in year $t$, that is in age class $a$, |
-|$C_{t}$   | is the total catch in year $t$, |
-|$w_{a}$   | is the mean body weight (kg) of fish in age class $a$, |
-|$Y_{t}$   | is the total yield biomass in year $t$, |
-|$F_{t,a}$ | is the instantaneous fishing mortality for age class $a$, in year $t$, |
-|$M_{t,a}$ | is the instantaneous natural mortality in year $t$ for age class $a$, and |
-|$Z_{t,a}$ | is the instantaneous total mortality for age class $a$, in year $t$. |
-
-
-## Description of Alternative Models
->Description of alternative models included in the assessment, if any (e.g., alternative M values or likelihood weights); note that the base model (i.e., the model most recently accepted by the SSC, either after reviewing the previous year’s final assessment or the current year’s preliminary assessment) must be included
-Per recommendation of the SSC (10/15), please use the following convention for numbering models:
-When a model constituting a “major change” from the original version of the base model is introduced, it is given a label of the form “Model *yy.j*,” where *yy* is the year (designated by the last two digits) that the model was introduced, and *j* is an integer distinguishing this particular “major change” model from other “major change” models introduced in the same year.
-When a model constituting only a “minor change” from the original version of the base model is introduced, it is given a label of the form “Model *yy.jx*,” where *x* is a letter distinguishing this particular “minor change” model from other “minor change” models derived from the original version of the same base model.
-Specifically, please use one of the following four options to distinguish “major” from “minor” changes:
-
->*Option A*  
-The original version of the base model is the base model from the earliest year relative to which the current base model constitutes only a minor change. 
-If Model *yy.j* is the original version of the base model and some other model (provisionally labeled “Model *M*”) is introduced in year 20zz, define the “average difference in spawning biomass” (ADSB) between Model *M* and Model *yy.j* as:
-
-$$ ADSB = \sqrt{\sum^{2000+yy}_{y=1977}\frac{(SB_{Model M,y} / SB_{Model yy.j.y} - 1)^2}{yy + 24}}, $$
-
->where both models are run with data through year 20*yy* only (i.e., the year in which the original version of the base model was introduced).  If ADSB<0.1, the final name of Model *M* should be of the form *Model yy.jx*, where *x* is a letter.  If ADSB≥0.1, the final name should be of the form *Model zz.i*, where *i* is an integer.  For Tiers 4-5, survey biomass may be used in place of spawning biomass in the above.
-
->*Option B*  
-Same as Option A, except that the model approved by the SSC in 2014 is considered to be the original version of the base model in all cases.  **The SSC noted that Option B can be used if Option A “poses a significant time commitment for the analyst.”**
-
->*Option C*  
-Same as Option A, except that the distinction between “major” and “minor” model changes is determined subjectively by the author on the basis of qualitative differences in model structure rather than the performance-based criterion described in Option A.  The SSC noted that Option C can be used “where needed.”
-
->*Option D*  
-Options B and C combined.
-
-
-## Parameters Estimated Outside the Assessment Model
-
-(Use the above heading for Tiers 1-3)
 
 ## Parameter Estimates
 
-(Use the above heading for Tiers 4-6)  
-List of parameters that are estimated independently of others (e.g., the natural mortality rate, parameters governing the maturity schedule, parameters governing growth [length at age, weight at length or age]—if not estimated inside the assessment model)
+The consumption estimator was updated in 2023 to include additional samples **(Table 22.6)**. 
+The methodology used for this updated estimate is the same as used previously. 
+The total consumption of octopus (t/year) estimated for the EBS is shown in **Figure 22.6**. 
+We used the geometric mean of the posterior distribution to estimate annual predation for each year in the time series because the posterior distribution is right-skewed (higher values have higher uncertainty). 
+Uncertainty of each annual estimate obtained by bootstrapping is also shown. 
+Estimates of annual predation mortality by Bering Sea cod on octopus range from <200 to over 20,000 tons; the larger values have a higher level of uncertainty. 
+The majority of the annual estimates prior to 2004 are in the range of 3,000 to 6,000 tons. 
+The estimates for 2005 – 2015, however, show much higher levels of consumption, with several years in the 10,000-20,000 t range. 
+This upward trend was initially assumed to be due to increasing abundance of Pacific cod, but there has also been an increase in the proportion of octopus in the diet of cod **(Figure 22.7)**. 
+Over the entire time series, this proportion shows large year-to-year variability and some periods of high consumption for several years followed by low consumption. 
+Thus, it is unclear whether the recent upward trend is a permanent change (perhaps due to climate factors) or the peak of a periodic cycle.
 
-Description of how these parameters are estimated (methods do not necessarily have to be statistical; e.g., *M* could be estimated by referencing a previously published value)
+We use a geometric mean of all the annual values to calculate a conservative long-term average predation rate over the 30 years of annual estimates. 
+The use of the geometric mean is recommended because the distribution of the annual estimates is strongly right-skewed, with annual variance increasing in proportion to the annual mean. 
+The geometric mean of all of the annual estimates in the updated data set is 4,770 tons, a substantial increase over the old estimate of 3,452 tons. 
+Both estimates are a full order of magnitude higher than the current rate of fishery catch of octopus. 
+The BSAI Plan Team requested clarification in September 2016 on whether the arithmetic mean, geometric mean, harmonic mean, or median of the annual values should be used to calculate the long-term average. 
+These different approaches are shown in **Table 22.7**. 
+At the November 2016 plan team meetings, use of the geometric mean was agreed upon.
 
-## Parameters Estimated Inside the Assessment Model
 
-(This section should be omitted for Tiers 4-6)  
-List of parameters that are estimated conditionally on those described above (e.g., full-selection fishing mortality rates, parameters governing the selectivity schedule, parameters governing growth if estimated inside the assessment model)
-Description of how these parameters are estimated (e.g., error structures assumed, prior distributions used, list of likelihood components)
 
 
