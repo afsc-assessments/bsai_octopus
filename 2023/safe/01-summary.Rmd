@@ -1,5 +1,20 @@
 # Executive Summary
 
+Through 2010, octopuses were managed as part of the BSAI "other species" complex, along with sharks, skates, and sculpins. 
+Historically, catches of the other species complex were well below TAC and retention of other species was small. 
+Due to increasing market values, retention of some of the other species complex members increased. 
+Beginning in 2011, the BSAI fisheries management plan was amended to provide separate management for sharks, skates, sculpins, and octopus and set separate catch limits for each species group. 
+Catch limits for octopus for 2011 were set using Tier 6 methods based on the maximum historical incidental catch rate. Since 2012, a methodology based on consumption of octopus by Pacific cod has been in used to set catch limits.
+
+In this assessment, all octopus species are grouped into one assemblage. 
+At least nine species of octopus are found in the BSAI. 
+The species composition of the octopus community is not well documented, but data indicate that the giant Pacific octopus *Enteroctopus dofleini* is most abundant in shelf waters and predominates in commercial catch. 
+Octopuses are taken as incidental catch in trawl, longline, and pot fisheries throughout the BSAI; a portion of the catch is retained or sold for human consumption or bait. 
+The highest octopus catch rates are from Pacific cod fisheries in the reporting areas around Unimak Pass. 
+The Bering Sea and Aleutian Island trawl surveys produce estimates of biomass for octopus, but these estimates are highly variable and do not reflect the same sizes of octopus caught by industry.
+Examination of size frequency from survey and fishery data shows that both commercial and survey trawls catch predominantly small animals (<5 kg), while commercial pot gear catches or retains large animals (10-20 kg). 
+In general, the state of knowledge about octopus in the BSAI is increasing, but there is no reliable estimate of octopus biomass.
+
 ## Summary of Changes in Assessment Inputs
 
 List of changes (if any) in the input data, including estimated catches assumed for the current year and projected catches for current year + 1 and current year + 2.
@@ -14,21 +29,7 @@ Common mistakes in this section include: 1) listing something that *has not* cha
 List of changes (if any) in the input data, including estimated catches assumed for the current year and projected catches for current year + 1 and current year + 2.
 List of changes (if any) in the assessment methodology. This is one of the most important sections of the SAFE report.  Common mistakes in this section include: 1) listing something that has not changed, and 2) not listing something that has changed.
 
-```{r, child= "01a-main_table.Rmd", eval = T}
-
-```
-
-
-Text table of area apportionments (if any) for the recommended one- and two-year ahead ABCs and OFLs, with a brief description of the apportionment methodology.
-
-```{r, child= "01b-apportionment.Rmd", eval = T}
-
-```
-
-
-If so are so kind as to provide tables for the plan team, place them here
-
-```{r, child= "01c-plan_team.Rmd", eval = T}
+```{r, child= "01a-main_table.Rmd", eval = F}
 
 ```
 
