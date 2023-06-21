@@ -5,7 +5,7 @@ params:
   species_complex: "yes"
   area: "Bering Sea and Aleutian Islands"
   tier: 3
-author: "Lee Chronin-Fine, Benjamin C. Williams, Sandra Lowe"
+author: "Lee Chronin-Fine, Benjamin C. Williams, and Sandra Lowe"
 date: "November 2023"
 
 # don't do anything below this line unless you are cool with the consequences
@@ -110,8 +110,8 @@ c3 = 2884 # proj catch year + 2
 ```{r, child="12-figures.Rmd", eval = T}
 ```
 
-```{r, child="13-append_a.Rmd", eval = T}
+```{r, child="13-append_a.Rmd", eval = F}
 ```
 
-```{r, child="14-append_vast.Rmd", eval = T}
+```{r, child="14-append_vast.Rmd", eval = F}
 ```
