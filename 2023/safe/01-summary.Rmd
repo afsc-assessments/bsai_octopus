@@ -8,7 +8,8 @@ Catch limits for octopus for 2011 were set using Tier 6 methods based on the max
 
 In this assessment, all octopus species are grouped into one assemblage. 
 At least nine species of octopus are found in the BSAI. 
-The species composition of the octopus community is not well documented, but data indicate that the giant Pacific octopus *Enteroctopus dofleini* is most abundant in shelf waters and predominates in commercial catch. 
+The species composition of the octopus community is not well documented, but data indicate that the giant Pacific octopus *Enteroctopus dofleini* is most abundant in shelf waters and predominates in commercial catch.
+Therefore, this assessment primarily focuses on the giant Pacific octopus. 
 Octopuses are taken as incidental catch in trawl, longline, and pot fisheries throughout the BSAI; a portion of the catch is retained or sold for human consumption or bait. 
 The highest octopus catch rates are from Pacific cod fisheries in the reporting areas around Unimak Pass. 
 The Bering Sea and Aleutian Island trawl surveys produce estimates of biomass for octopus, but these estimates are highly variable and do not reflect the same sizes of octopus caught by industry.
@@ -17,11 +18,25 @@ In general, the state of knowledge about octopus in the BSAI is increasing, but 
 
 ## Summary of Changes in Assessment Inputs
 
-List of changes (if any) in the input data, including estimated catches assumed for the current year and projected catches for current year + 1 and current year + 2.
+<!-- List of changes (if any) in the input data, including estimated catches assumed for the current year and projected catches for current year + 1 and current year + 2. -->
 
-List of changes (if any) in the assessment methodology. 
-**This is one of the most important sections of the SAFE report**. 
-Common mistakes in this section include: 1) listing something that *has not* changed, and 2) not listing something that *has* changed.
+<!-- List of changes (if any) in the assessment methodology.  -->
+<!-- **This is one of the most important sections of the SAFE report**.  -->
+<!-- Common mistakes in this section include: 1) listing something that *has not* changed, and 2) not listing something that *has* changed. -->
+
+
+1) This assessment methodology has not changed from previous assessments, but the calculation of annual
+and long-term average consumption rates has been updated using additional Pacific cod diet
+data from 2016-2022.
+Over ______ stomach samples were added to the data set.
+The more recent data and estimates are used to derive updated catch limits.
+The detailed methodology for these calculations can be found in the 2016 assessment [@conners2016assessment].
+
+2) Incidental catch data have been updated through ________, 2023.
+
+3) Biomass estimates from the *Years* EBS shelf trawl surveys, and the *Years* Aleutian Islands trawl survey are presented.
+The last BS slope survey was conducted in 2016.
+
 
 
 ## Summary of Results
