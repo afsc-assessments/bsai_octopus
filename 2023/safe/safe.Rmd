@@ -5,7 +5,7 @@ params:
   species_complex: "yes"
   area: "Bering Sea and Aleutian Islands"
   tier: 3
-author: "Lee Chronin-Fine, Benjamin C. Williams, and Sandra Lowe"
+author: "Lee Cronin-Fine, Benjamin C. Williams, and Sandra Lowe"
 date: "November 2023"
 
 # don't do anything below this line unless you are cool with the consequences
