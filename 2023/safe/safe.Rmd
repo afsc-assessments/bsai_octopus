@@ -73,41 +73,41 @@ c3 = 2884 # proj catch year + 2
 ```{r, child="01-summary.Rmd", eval = T}
 ```
 
-```{r, child="02-responses.Rmd", eval = T}
+```{r, child="02-responses.Rmd", eval = F}
 ```
 
-```{r, child="03-intro.Rmd", eval = T}
+```{r, child="03-intro.Rmd", eval = F}
 ```
 
-```{r, child="04-fishery.Rmd", eval = T}
+```{r, child="04-fishery.Rmd", eval = F}
 ```
 
-```{r, child="05-data.Rmd", eval = T}
+```{r, child="05-data.Rmd", eval = F}
 ```
 
-```{r, child="06-model.Rmd", eval = T}
+```{r, child="06-model.Rmd", eval = F}
 ```
 
-```{r, child="07-results.Rmd", eval = T}
+```{r, child="07-results.Rmd", eval = F}
 ```
 
-```{r, child="08-abc.Rmd", eval = T}
+```{r, child="08-abc.Rmd", eval = F}
 ```
 
-```{r, child="09-ecosystem.Rmd", eval = T}
+```{r, child="09-ecosystem.Rmd", eval = F}
 ```
 
-```{r, child="10-gaps.Rmd", eval = T}
+```{r, child="10-gaps.Rmd", eval = F}
 ```
 \pagebreak
 \allsectionsfont{\centering}
 # References
 <div id="refs"></div>
 
-```{r, child="11-tables.Rmd", eval = T}
+```{r, child="11-tables.Rmd", eval = F}
 ```
 
-```{r, child="12-figures.Rmd", eval = T}
+```{r, child="12-figures.Rmd", eval = F}
 ```
 
 ```{r, child="13-append_a.Rmd", eval = F}
