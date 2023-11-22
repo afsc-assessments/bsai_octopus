@@ -1,78 +1,22 @@
 # Data
 
-(If the data for any particular component described here are so voluminous that the corresponding tables would comprise more than 2 pages, the tables may be placed on an ftp site referenced in the chapter.)
-For Tiers 1-3, insert a text table summarizing the data used in the assessment model (source, type, years included). 
-Data which should be presented as time series (starting no later than 1977, if possible):
-The following is a typical example:
-
-
-The following table summarizes the data used in the stock assessment model for northern rockfish (bold denotes new data for this assessment):
-
-```{r}
-
-data.frame(Source = c(rep("NMFS Groundfish survey", 2),
-                      rep("U.S. trawl fishery", 3)),
-           Data = c("Survey biomass",
-                    "Age composition",
-                    "Catch",
-                    "Age composition",
-                    "Length composition"),
-           Years = c("1984-1999 (triennial), 2001-2019 (biennial)",
-                     "1984, 1987, 1990, 1993, 1996, 1999, 2003, 2005, 2007, 2009, 2011, 2013, 2015, 2017, 2019",
-                     "1961-2020",
-                     "1998-2002, 2004-2006, 2008, 2010, 2012, 2014, 2016, 2018",
-                     "1991-1997, 2003, 2007, 2009, 2011, 2013, 2015, 2017, 2019"))  %>% 
-  flextable::flextable() %>% 
-    flextable::width(j = ~ Source, width = 1) %>% 
-    flextable::width(j = ~ Data, width = 1.5) %>% 
-   flextable::width(j = ~ Years, width = 4) %>% 
-   flextable::merge_v(j = 1) %>% 
-  flextable::font(fontname = "Times", part = "all") %>% 
-  flextable::fontsize(size = 10) %>% 
-  flextable::theme_vanilla() %>% 
-  flextable::fix_border_issues() 
-
-```
-
 ## Fishery
 
-### Catch
+*Catch*
 
-Prior to 2003, there was little market for octopus and no directed fishery in federal waters; historical rates of incidental catch (prior to 2003) do not necessarily reflect fishing patterns where octopus are part of retained market catch. 
-Estimates of incidental catch **(Tables 22.2 and 22.3)** suggest substantial year-to- year variation in harvest, some of which is due to changing regulations and market forces in the Pacific cod fishery. 
-A large interannual variability in octopus abundance is also consistent with anecdotal reports [@Paust1988, @Paust1997] and with life-history patterns for *E. dofleini*.
-
-Reported harvest of octopus from incidental catch in state fisheries in the BSAI ranged from 18-69 t between 1996 and 2002 but was 100-300 t in 2003-2006 [@Sagalkin2011]. 
-From 1992-2002 total incidental catch of octopus in federal waters, estimated from observed hauls, was generally between 100 and 400 t **(Table 22.2)**. 
-Since 2003 the total octopus catch in both state and federal waters (including discards) has been estimated using the NMFS Alaska Regional Office catch accounting system. 
-Total incidental catch during this period has continued to be 200-400 tons in most years, with very high year-to year variation from 2006 - 2018. 
-Total catch was generally high (300-500 tons) in 2003-2006 and low (<200 tons) in 2007-2010, with only 72 tons caught in 2009. 
-The low octopus catch during this period may be a result of a decline in processor demand and a drop in cod pot-fishing effort due to a decline in the market price of cod and increased fuel prices. 
-Catch in 2011 was the highest observed to that date, reaching 534 tons by mid-October. 
-On September 1, 2011 the NMFS Regional Office prohibited retention of octopus because the TAC of 150 tons had been reached. 
-Catch rates for Pacific cod and incidental catch rates for octopus were both very high during fall 2011 and the octopus OFL of 528 t was reached; the NMFS closed directed fishing for Pacific cod with pot gear in the BSAI on October 21, 2011. 
-As in previous years, the majority of the 2011 catch came from Pacific cod fisheries, primarily pot fisheries in statistical reporting areas 519, 517, and 509 **(Table 22.3 and Figure 22.2)**.
-
-Incidental catch rates were low for 2012 and 2013 but were over 400 t in 2014 through 2016. 
-Catches have declined during 2016-2018 but the 2020 catch is on track to be the largest in the time series. 
-All catches were still nearly an order of magnitude below the recommended ABC. 
-The percentage of BSAI octopus retained is variable and has increased since 2016 (34% in 2017).
-
-
-### Age and Size Composition
-
-Catch at age or catch at length (including sample sizes), as appropriate
+See Table `r params$chapter`-\@ref(tab:tab-catch-OFL) and Figure `r params$chapter`-\@ref(fig:fig-catch) for a time series of the total catch from 1997 to `r year`. The `r year` catch data are incomplete. They were updated through `r last_cat_date`. 
 
 ## Survey
 
-### Biomass Estimates from Trawl Surveys
+*AFSC Trawl Survey Biomass Estimate*
 
-Survey biomass estimates, including at least one measure of sampling variability such as standard error, CV, or 95% confidence interval (for stocks managed as complexes, be sure to report the sampling variability for the complex-wide survey biomass estimate, not just the individual stocks). 
-Complex-wide variance could be computed simply by summing the variances from the survey estimates.
+Bottom trawl surveys were conducted on an annual basis in the Eastern Bering Sea (EBS) shelf and biennially in the Aleutian Islands (AI) beginning in 2000. Both of these surveys were canceled in 2020 due to the COVID-19 pandemic. The EBS slope surveys were conducted irregularly and was last sampled in 2016.  Estimated biomass for the octopus stock complex based on the AFSC bottom trawl surveys are shown in Tables `r params$chapter`-\@ref(tab:tab-AI-survey),-\@ref(tab:tab-shelf-survey) and -\@ref(tab:tab-slope-survey). Biomass estimates in the EBS and AI show high year-to-year variability (Figure `r params$chapter`-\@ref(fig:fig-survey-bio)). There is a large sampling variance associated with estimates from the shelf surveys because a large number of tows do not capture octopuses. It is impossible to determine how much of the year–to-year variability in the estimated biomass reflects true variation in abundance or is a result of sampling variation. For example, the 1997 biomass estimate from the shelf survey (254 t) approximately equaled the estimated commercial catch (249 t). This suggests that the 1997 biomass estimate was unreasonably low. The `r year` EBS biomass estimate (`r format(round(cur_ebs_shelf), big.mark=",")` t) is a decrease of `r ch_ebs_shelf`% from `r year-1` (`r format(round(prior_ebs_shelf), big.mark=",")` t). The `r year` EBS biomass estimate is also `r ch_avg_ebs_shelf`% lower than the long-term average biomass estimate (`r format(round(avg_shelf), big.mark=",")` t) and is the lowest biomass estimate since 2014.
 
-### Age and Size Composition 
 
-Survey numbers at age or numbers at length (including sample sizes), as appropriate
+## Other Data
 
-### Maturity Data
+The BSAI octopus assessment utilizes diet data from Pacific cod, the main predator of Octopus in the BSAI. These data area available from the AFSC food habits group (Table `r params$chapter`-\@ref(tab:tab-stomach-number)). A total of 13,614 stomachs from 2012-2013 and 2016-2023 have been added to the data set since the last assessment update in 2016.
+
+
+
 

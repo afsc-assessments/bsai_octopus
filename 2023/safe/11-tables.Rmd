@@ -1,18 +1,556 @@
 # Tables
 
-```{r tab1}
-knitr::kable(data.frame(year = 1999:2000,
-                 catch = 1:2), 
-             caption = "Summary of key management measures and the time series of catch, ABC, and TAC for northern rockfish in the Gulf of Alaska",
-             booktabs = TRUE)
+```{r tab-AI-survey-all-sp, eval=FALSE, include=FALSE}
+
+# Aluetian Island survey biomass table
+
+library(here)
+library(tidyverse)
+# library(flextable)
+
+# year <- 2023
+
+srv_tab <- read.csv(here(year,"data", "output", paste(year,"octopus_AI_survey.csv", sep = "_"))) %>%
+  select(-area)
+
+col_nam <- colnames(srv_tab)
+
+bio_pl <- seq(from = 2, to = (length(col_nam)-1), by = 2)
+cv_pl <- seq(from = 3, to = (length(col_nam)), by = 2)
+sh_pl1 <- seq(from = 4, to = (length(col_nam)), by = 4)
+sh_pl2 <- seq(from = 5, to = (length(col_nam)), by = 4)
+
+sp_nam <- unlist(strsplit(readLines(here(year,"data", "output","AI_species.out")),split = "_"))
+
+
+tbl3 <- flextable::regulartable(srv_tab) %>%
+  flextable::set_caption("Survey biomass estimates (t) for octopus species from the Aleutian Islands. CV is coefficient of variation. “octopus unID” is octopus unidentified.") %>%
+  flextable::font(fontname = "Times New Roman", part = "all") %>%
+  flextable::fontsize(size = 10, part = "all") %>%
+  flextable::compose(i=1, j=bio_pl, value = flextable::as_paragraph("Biomass"), part = "header") %>%
+  flextable::compose(i=1, j=cv_pl, value = flextable::as_paragraph("CV"), part = "header") %>%
+  flextable::add_header_row(value = c( "", sp_nam,"Total"), colwidths = c(1,rep(2,(length(sp_nam)+1)))) %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center")  %>%
+  flextable::italic(i = 1, j = 2:(length(col_nam)-4),part = "header") %>%
+  flextable::compose(i=2, j=1, value = flextable::as_paragraph("Year"), part = "header") %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x))  %>%
+  flextable::border_remove() %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline_top() %>%
+  flextable::bold(i = 2, part = "header") %>%
+  flextable::hline_bottom()   %>%
+  flextable::hline(i=1,j =2:length(col_nam), part = "header") %>%
+  flextable::bg(j = sh_pl1, bg = "#f7f7f7", part = "all")  %>%  # this provides the shading
+  flextable::bg(j = sh_pl2, bg = "#f7f7f7", part = "all")%>%
+  flextable::padding(padding = 1.5, part = "all")   %>%
+  flextable::autofit()
+
+
+tbl3
+
+```
+
+```{r tab-AI-survey}
+
+# Aluetian Island survey biomass table
+
+library(here)
+library(tidyverse)
+library(flextable)
+
+# year <- 2023
+
+srv_tab <- read.csv(here(year,"data", "output", paste(year,"octopus_AI_survey_sub.csv", sep = "_"))) %>%
+  select(-area)
+
+col_nam <- colnames(srv_tab)
+
+bio_pl <- seq(from = 2, to = (length(col_nam)-1), by = 2)
+cv_pl <- seq(from = 3, to = (length(col_nam)), by = 2)
+sh_pl1 <- seq(from = 4, to = (length(col_nam)), by = 4)
+sh_pl2 <- seq(from = 5, to = (length(col_nam)), by = 4)
+
+sp_nam <- c("E. dofleini","Other Octopus")
+
+# "Survey biomass estimates (t) for octopus species from the Aleutian Islands. CV is coefficient of variation. “octopus unID” is octopus unidentified."
+
+tbl3 <- flextable::regulartable(srv_tab) %>%
+  flextable::set_caption(flextable::as_paragraph(as_chunk("AFSC Aleutian Islands trawl survey biomass estimates (t) for octopus species. CV is coefficient of variation. “Other Octopus” include ", fp_text_default(font.family = "Times New Roman")), as_chunk("B. leioderma, J. diaphana, S. salebrosus, B. oregonensis ", fp_text_default(font.family = "Times New Roman", italic = T)),as_chunk("and octopus unidentified.", fp_text_default(font.family = "Times New Roman")))) %>%
+  flextable::font(part = "footer", fontname = "Consolas") %>%
+  flextable::font(fontname = "Times New Roman", part = "all") %>%
+  flextable::fontsize(size = 10, part = "all") %>%
+  flextable::compose(i=1, j=bio_pl, value = flextable::as_paragraph("Biomass"), part = "header") %>%
+  flextable::compose(i=1, j=cv_pl, value = flextable::as_paragraph("CV"), part = "header") %>%
+  flextable::add_header_row(value = c( "", sp_nam,"Total"), colwidths = c(1,rep(2,(length(sp_nam)+1)))) %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center")  %>%
+  flextable::italic(i = 1, j = 2:(length(col_nam)-4),part = "header") %>%
+  flextable::compose(i=2, j=1, value = flextable::as_paragraph("Year"), part = "header") %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x))  %>%
+  flextable::border_remove() %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline_top() %>%
+  flextable::bold(i = 2, part = "header") %>%
+  flextable::hline_bottom()   %>%
+  flextable::hline(i=1,j =2:length(col_nam), part = "header") %>%
+  flextable::bg(j = sh_pl1, bg = "#f7f7f7", part = "all")  %>%  # this provides the shading
+  flextable::bg(j = sh_pl2, bg = "#f7f7f7", part = "all")%>%
+  flextable::padding(padding = 1.5, part = "all")   %>%
+  flextable::autofit()
+
+
+tbl3
+
 ```
 
 \pagebreak
 
-```{r tab2}
-flextable::regulartable(data.frame(year = 1999:2000,
-                 catch = 1:2)) %>%  
-      flextable::set_caption("Commercial catch (t) and management action for northern rockfish in the Gulf of Alaska, 1961-present. The *Description of the catch time series* Section describes procedures use to estimate catch during 1961-1993. Ctach estimates for 1993-2019 are from NMFS Observer Program and Alaska Regional Office updated through October XX, 2020.")
+```{r tab-shelf-survey-all-sp, eval=FALSE, include=FALSE}
+
+# EBS shelf survey biomass table
+
+library(here)
+library(tidyverse)
+# library(flextable)
+
+# year <- 2023
+
+srv_tab <- read.csv(here(year,"data", "output",paste(year,"octopus_EBS_shelf_survey.csv", sep = "_"))) %>%
+  select(-area)
+
+col_nam <- colnames(srv_tab)
+
+bio_pl <- seq(from = 2, to = (length(col_nam)-1), by = 2)
+cv_pl <- seq(from = 3, to = (length(col_nam)), by = 2)
+sh_pl1 <- seq(from = 4, to = (length(col_nam)), by = 4)
+sh_pl2 <- seq(from = 5, to = (length(col_nam)), by = 4)
+
+sp_nam <- unlist(strsplit(readLines(here(year,"data", "output","EBS_shelf_species.out")),split = "_"))
+
+
+tbl4 <- flextable::regulartable(srv_tab) %>%
+  flextable::set_caption(paste("Survey biomass estimates (t) for octopus species from the EBS shelf. CV is coefficient of variation. “octopus unID” is octopus unidentified.", sep = ""), word_stylename = "Times New Roman") %>%
+  flextable::font(fontname = "Times New Roman", part = "all") %>%
+  flextable::fontsize(size = 10, part = "all") %>%
+  flextable::compose(i=1, j=bio_pl, value = flextable::as_paragraph("Biomass"), part = "header") %>%
+  flextable::compose(i=1, j=cv_pl, value = flextable::as_paragraph("CV"), part = "header") %>%
+  flextable::add_header_row(value = c( "", sp_nam,"Total"), colwidths = c(1,rep(2,(length(sp_nam)+1)))) %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center")  %>%
+  flextable::italic(i = 1, j = 2:(length(col_nam)-4),part = "header") %>%
+  flextable::compose(i=2, j=1, value = flextable::as_paragraph("Year"), part = "header") %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x))  %>%
+  flextable::border_remove() %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline_top() %>%
+  flextable::bold(i = 2, part = "header") %>%
+  flextable::hline_bottom()   %>%
+  flextable::hline(i=1,j =2:length(col_nam), part = "header") %>%
+  flextable::bg(j = sh_pl1, bg = "#f7f7f7", part = "all")  %>%  # this provides the shading
+  flextable::bg(j = sh_pl2, bg = "#f7f7f7", part = "all")%>%
+  flextable::padding(padding = 1.5, part = "all")   %>%
+  flextable::autofit()
+
+
+tbl4
+
+```
+
+```{r tab-shelf-survey}
+
+# EBS shelf survey biomass table
+
+library(here)
+library(tidyverse)
+# library(flextable)
+
+# year <- 2023
+
+srv_tab <- read.csv(here(year,"data", "output",paste(year,"octopus_EBS_shelf_survey_sub.csv", sep = "_"))) %>%
+  select(-area)
+
+col_nam <- colnames(srv_tab)
+
+bio_pl <- seq(from = 2, to = (length(col_nam)-1), by = 2)
+cv_pl <- seq(from = 3, to = (length(col_nam)), by = 2)
+sh_pl1 <- seq(from = 4, to = (length(col_nam)), by = 4)
+sh_pl2 <- seq(from = 5, to = (length(col_nam)), by = 4)
+
+sp_nam <- c("E. dofleini","Other Octopus")
+
+
+tbl4 <- flextable::regulartable(srv_tab) %>%
+  flextable::set_caption(flextable::as_paragraph(as_chunk("AFSC EBS shelf trawl survey biomass estimates (t) for octopus species. CV is coefficient of variation. “Other Octopus” include ", fp_text_default(font.family = "Times New Roman")), as_chunk("B. leioderma, S. salebrosus, B. oregonensis ", fp_text_default(font.family = "Times New Roman", italic = T)),as_chunk("and octopus unidentified.", fp_text_default(font.family = "Times New Roman")))) %>%
+  flextable::font(fontname = "Times New Roman", part = "all") %>%
+  flextable::fontsize(size = 10, part = "all") %>%
+  flextable::compose(i=1, j=bio_pl, value = flextable::as_paragraph("Biomass"), part = "header") %>%
+  flextable::compose(i=1, j=cv_pl, value = flextable::as_paragraph("CV"), part = "header") %>%
+  flextable::add_header_row(value = c( "", sp_nam,"Total"), colwidths = c(1,rep(2,(length(sp_nam)+1)))) %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center")  %>%
+  flextable::italic(i = 1, j = 2:(length(col_nam)-4),part = "header") %>%
+  flextable::compose(i=2, j=1, value = flextable::as_paragraph("Year"), part = "header") %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x))  %>%
+  flextable::border_remove() %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline_top() %>%
+  flextable::bold(i = 2, part = "header") %>%
+  flextable::hline_bottom()   %>%
+  flextable::hline(i=1,j =2:length(col_nam), part = "header") %>%
+  flextable::bg(j = sh_pl1, bg = "#f7f7f7", part = "all")  %>%  # this provides the shading
+  flextable::bg(j = sh_pl2, bg = "#f7f7f7", part = "all")%>%
+  flextable::padding(padding = 1.5, part = "all")   %>%
+  flextable::autofit()
+
+
+tbl4
+
+```
+
+
+\pagebreak
+
+```{r tab-slope-survey-all-sp, eval=FALSE, include=FALSE}
+
+# EBS slope survey biomass table
+
+library(here)
+library(tidyverse)
+
+# year <- 2023
+
+srv_tab <- read.csv(here(year,"data", "output",paste(year,"octopus_EBS_slope_survey.csv", sep = "_"))) %>%
+  select(-area)
+
+sp_nam <- unlist(strsplit(readLines(here(year,"data", "output","EBS_slope_species.out")),split = "_"))
+
+srv1 <- srv_tab %>%
+  select(1,2:3,4:5,6:7,8:9,10:11)
+
+col_nam <- colnames(srv1)
+sp_nam1 <- sp_nam[1:5]
+bio_pl <- seq(from = 2, to = (length(col_nam)-1), by = 2)
+cv_pl <- seq(from = 3, to = (length(col_nam)), by = 2)
+sh_pl1 <- seq(from = 4, to = (length(col_nam)), by = 4)
+sh_pl2 <- seq(from = 5, to = (length(col_nam)), by = 4)
+
+
+tbl5 <- flextable::regulartable(srv1) %>%
+  flextable::set_caption(paste("Survey biomass estimates (t) for octopus species from the EBS slope. CV is coefficient of variation. “octopus unID” is octopus unidentified.", sep = "")) %>%
+  flextable::font(fontname = "Times New Roman", part = "all") %>%
+  flextable::fontsize(size = 10, part = "all")  %>%
+  flextable::compose(i=1, j=bio_pl, value = flextable::as_paragraph("Biomass"), part = "header") %>%
+  flextable::compose(i=1, j=cv_pl, value = flextable::as_paragraph("CV"), part = "header") %>%
+  flextable::add_header_row(value = c( "", sp_nam1), colwidths = c(1,rep(2,(length(sp_nam1))))) %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center")   %>%
+  # flextable::fontsize(i = 1, size = 8, part = "header") %>%
+  # merge_v(part = "header") %>%
+  flextable::italic(i = 1, j = 2:(length(col_nam)),part = "header") %>%
+  flextable::compose(i=2, j=1, value = flextable::as_paragraph("Year"), part = "header") %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x))  %>%
+  flextable::border_remove()  %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline_top() %>%
+  flextable::bold(i = 2, part = "header") %>%
+  flextable::hline_bottom()   %>%
+  flextable::hline(i=1,j =2:length(col_nam), part = "header") %>%
+  flextable::bg(j = sh_pl1, bg = "#f7f7f7", part = "all")  %>%  # this provides the shading
+  flextable::bg(j = sh_pl2, bg = "#f7f7f7", part = "all") %>%
+  # flextable::width(j = 1:length(col_nam), width = .4) %>%
+  # flextable::width(j = 1, width = .2)  %>%
+  flextable::padding(padding = .1, part = "all")    %>%
+  flextable::autofit()
+
+
+tbl5
+
+```
+
+```{r tab_slope_survey_2, eval=FALSE, include=FALSE}
+
+# EBS slope survey biomass table
+
+library(here)
+library(tidyverse)
+
+# year <- 2023
+
+srv_tab <- read.csv(here(year,"data", "output",paste(year,"octopus_EBS_slope_survey.csv", sep = "_"))) %>%
+  select(-area)
+
+sp_nam <- unlist(strsplit(readLines(here(year,"data", "output","EBS_slope_species.out")),split = "_"))
+
+srv2 <- srv_tab %>%
+  select(1,12:13,14:15,16:17,18:19,20:21)
+
+col_nam <- colnames(srv2)
+sp_nam1 <- sp_nam[6:length(sp_nam)]
+bio_pl <- seq(from = 2, to = (length(col_nam)-1), by = 2)
+cv_pl <- seq(from = 3, to = (length(col_nam)), by = 2)
+sh_pl1 <- seq(from = 4, to = (length(col_nam)), by = 4)
+sh_pl2 <- seq(from = 5, to = (length(col_nam)), by = 4)
+
+
+tbl6 <- flextable::regulartable(srv2) %>%
+  flextable::font(fontname = "Times New Roman", part = "all") %>%
+  flextable::fontsize(size = 10, part = "all")  %>%
+  flextable::compose(i=1, j=bio_pl, value = flextable::as_paragraph("Biomass"), part = "header") %>%
+  flextable::compose(i=1, j=cv_pl, value = flextable::as_paragraph("CV"), part = "header") %>%
+  flextable::add_header_row(value = c( "", sp_nam1,"Total"), colwidths = c(1,rep(2,(length(sp_nam1)+1)))) %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center")   %>%
+  # flextable::fontsize(i = 1, size = 8, part = "header") %>%
+  # merge_v(part = "header") %>%
+  flextable::italic(i = 1, j = 2:(length(col_nam)-4),part = "header") %>%
+  flextable::compose(i=2, j=1, value = flextable::as_paragraph("Year"), part = "header") %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x))  %>%
+  flextable::border_remove()  %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline_top() %>%
+  flextable::bold(i = 2, part = "header") %>%
+  flextable::hline_bottom()   %>%
+  flextable::hline(i=1,j =2:length(col_nam), part = "header") %>%
+  flextable::bg(j = sh_pl1, bg = "#f7f7f7", part = "all")  %>%  # this provides the shading
+  flextable::bg(j = sh_pl2, bg = "#f7f7f7", part = "all") %>%
+  # flextable::width(j = 1:length(col_nam), width = .4) %>%
+  # flextable::width(j = 1, width = .2)  %>%
+  flextable::padding(padding = .1, part = "all")    %>%
+  flextable::autofit()
+
+
+tbl6
+
+```
+
+
+```{r tab-slope-survey}
+
+# EBS slope survey biomass table
+
+library(here)
+library(tidyverse)
+
+year <- 2023
+
+srv_tab <- read.csv(here(year,"data", "output",paste(year,"octopus_EBS_slope_survey_sub.csv", sep = "_"))) %>%
+  select(-area)
+
+sp_nam <- c("E. dofleini","Other Octopus")
+
+col_nam <- colnames(srv_tab)
+bio_pl <- seq(from = 2, to = (length(col_nam)-1), by = 2)
+cv_pl <- seq(from = 3, to = (length(col_nam)), by = 2)
+sh_pl1 <- seq(from = 4, to = (length(col_nam)), by = 4)
+sh_pl2 <- seq(from = 5, to = (length(col_nam)), by = 4)
+
+
+tbl5 <- flextable::regulartable(srv_tab) %>%
+  flextable::set_caption(flextable::as_paragraph(as_chunk("AFSC EBS slope trawl survey biomass estimates (t) for octopus species. CV is coefficient of variation. “Other Octopus” include ", fp_text_default(font.family = "Times New Roman")), as_chunk("B. leioderma, G. boreopacifica, J. diaphana, S. salebrosus, B. oregonensis, O. californiana ", fp_text_default(font.family = "Times New Roman", italic = T)),as_chunk("and octopus unidentified.", fp_text_default(font.family = "Times New Roman")))) %>%
+  flextable::font(fontname = "Times New Roman", part = "all") %>%
+  flextable::fontsize(size = 10, part = "all")  %>%
+  flextable::compose(i=1, j=bio_pl, value = flextable::as_paragraph("Biomass"), part = "header") %>%
+  flextable::compose(i=1, j=cv_pl, value = flextable::as_paragraph("CV"), part = "header") %>%
+  flextable::add_header_row(value = c( "", sp_nam,"Total"), colwidths = c(1,rep(2,(length(sp_nam)+1)))) %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center")   %>%
+  # flextable::fontsize(i = 1, size = 8, part = "header") %>%
+  # merge_v(part = "header") %>%
+  flextable::italic(i = 1, j = 2:(length(col_nam)-4),part = "header") %>%
+  flextable::compose(i=2, j=1, value = flextable::as_paragraph("Year"), part = "header") %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x))  %>%
+  flextable::border_remove()  %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline_top() %>%
+  flextable::bold(i = 2, part = "header") %>%
+  flextable::hline_bottom()   %>%
+  flextable::hline(i=1,j =2:length(col_nam), part = "header") %>%
+  flextable::bg(j = sh_pl1, bg = "#f7f7f7", part = "all")  %>%  # this provides the shading
+  flextable::bg(j = sh_pl2, bg = "#f7f7f7", part = "all") %>%
+  # flextable::width(j = 1:length(col_nam), width = .4) %>%
+  # flextable::width(j = 1, width = .2)  %>%
+  flextable::padding(padding = .1, part = "all")    %>%
+  flextable::autofit()
+
+
+tbl5
+
+```
+
+
+\pagebreak
+
+```{r tab-catch-OFL}
+
+library(here)
+library(tidyverse)
+library(flextable)
+
+# year <- 2023
+
+cat_tab <- read.csv(here(year,"data", "output",paste(year,"octopus_total_catch_by_target.csv", sep = "_"))) 
+
+specs_tab <- read.csv(here(year,"data", "user_inputs","specs.csv")) 
+
+tab_vals <- cat_tab %>%
+  left_join(specs_tab) %>%
+  mutate(Catch_ABC = round((Total/ABC)*100, 0))
+
+star_pl <- length(tab_vals$Year)
+
+tbl <- regulartable(tab_vals) %>%
+  flextable::set_caption(paste("Estimated catch (t) of all octopus species from 1997-", year," in the Bering Sea and Aleutian Islands, by target fishery. Data reflect catch posted through ", last_cat_date, " (sourced ", cur_yr_date, " from the NMFS Alaska Regional Office using the AKFIN database (http://www.akfin.org)). Catch is divided into three groups based on the target fishery; Pacific cod (typically highest octopus catch), all species of flatfish and all other target fisheries combined. Pacific halibut are included in the 'other' category. Octopus did not have their own catch limits until 2011. An alternative Tier 6 method was adopted in 2012.", sep = "")) %>%
+  flextable::font(fontname = "Times New Roman", part = "all")   %>%
+  flextable::fontsize(size = 10, part = "all") %>%
+  flextable::add_header_row(value = c( "", "Target Fishery",""), colwidths = c(1,5,4)) %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center") %>%
+  flextable::set_formatter(retained = function(x) paste(x,"%",sep = "")) %>%
+  compose(i=2, j=6, value = as_paragraph( "Retained"), part = "header") %>%
+  compose(i=1:6, j=6, value = as_paragraph( ""), part = "body") %>%
+  flextable::set_formatter(Catch_ABC = function(x) paste(x,"%",sep = "")) %>%
+  compose(i=2, j=10, value = as_paragraph( "Catch/ABC"), part = "header") %>%
+  compose(i=1:14, j=10, value = as_paragraph(""), part = "body") %>%
+  flextable::set_formatter(Year = function(x) sprintf("%s", x)) %>%
+  flextable::border_remove() %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline(i=1,j =2:6, part = "header") %>%
+  flextable::hline_top() %>%
+  bold(i = 1:2, part = "header") %>%
+  flextable::bg(j = 7:10, bg = "#f7f7f7", part = "all") %>%  # this provides the shading
+  flextable::hline_bottom()  %>%
+  padding(padding = .3, part = "all") %>%
+  flextable::width(j = 1:9, width = 0.6) %>%
+  set_table_properties(width = .9)
+  # autofit()
+
+tbl <- flextable::font(
+    flextable::footnote(tbl,
+                         i=star_pl, j=1, ref_symbols = "*",
+                        value = flextable::as_paragraph(paste(year,"catch as of", last_cat_date, ", sourced", cur_yr_date, "from the NMFS Alaska Regional Office using the AKFIN database (http://www.akfin.org)."))),
+        fontname = "Times New Roman",
+        part = "all")
+
+tbl
+
 ```
 
 \pagebreak
+
+```{r tab-stomach-number-one-column, eval=FALSE, include=FALSE}
+
+library(here)
+library(tidyverse)
+library(flextable)
+
+# year <- 2023
+
+samp_tab <- read.csv(here(year,"data", "user_inputs","stomach_samples_sizes.csv")) 
+
+last_samp <- max(samp_tab$year)
+first_samp <- min(samp_tab$year)
+tot_samp <- sum(samp_tab$samples)
+
+tbl2 <- regulartable(samp_tab) %>%
+  flextable::set_caption(paste("Number of Pacific cod stomach samples, from ", first_samp, "-", last_samp, ", analyzed for octopus consumption estimates. A total of ", format(tot_samp, big.mark=",")  ," stomachs were analyzed.", sep = "")) %>%
+  flextable::font(fontname = "Times New Roman", part = "all")   %>%
+  flextable::fontsize(size = 10, part = "all") %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center") %>%
+  compose(i=1, j=1, value = as_paragraph("Year"), part = "header") %>%
+  compose(i=1, j=2, value = as_paragraph("# of Samples"), part = "header") %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x)) %>%
+  flextable::border_remove() %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline_top() %>%
+  bold(i = 1, part = "header") %>%
+  flextable::hline_bottom()  %>%
+  padding(padding = .7, part = "all")   %>%
+  autofit()
+
+tbl2
+
+```
+
+
+```{r tab-stomach-number}
+
+library(here)
+library(tidyverse)
+library(flextable)
+
+# year <- 2023
+
+samp_tab <- read.csv(here(year,"data", "user_inputs","stomach_samples_sizes_two_columns.csv")) 
+
+last_samp <- max(samp_tab$year.1)
+first_samp <- min(samp_tab$year)
+tot_samp <- sum(samp_tab$samples) + sum(samp_tab$samples.1)
+
+tbl2 <- regulartable(samp_tab) %>%
+  flextable::set_caption(paste("Number of Pacific cod stomach samples, from ", first_samp, "-", last_samp, ", analyzed for octopus consumption estimates. A total of ", format(tot_samp, big.mark=",")  ," stomachs were analyzed.", sep = "")) %>%
+  flextable::font(fontname = "Times New Roman", part = "all")   %>%
+  flextable::fontsize(size = 10, part = "all") %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center") %>%
+  compose(i=1, j=c(1,3), value = as_paragraph("Year"), part = "header") %>%
+  compose(i=1, j=c(2,4), value = as_paragraph("# of Samples"), part = "header") %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x)) %>%
+  flextable::set_formatter(year.1 = function(x) sprintf("%s", x)) %>%
+  flextable::border_remove() %>%
+  flextable::hline_top(part = "header") %>%
+  flextable::hline_top() %>%
+  bold(i = 1, part = "header") %>%
+  flextable::hline_bottom()  %>%
+  padding(padding = .7, part = "all")   %>%
+  flextable::bg(j = 3:4, bg = "#f7f7f7", part = "all") %>%  # this provides the shading 
+  autofit()
+
+tbl2
+
+```
+
+\pagebreak
+
+```{r tab-stomach-mean}
+
+library(here)
+library(tidyverse)
+library(flextable)
+
+year <- 2023
+
+stom_tab <- read.csv(here(year,"data", "user_inputs","cons_summary_1million_samples.csv")) %>%
+  select(year,g_mean,X2.5.,X97.5.)
+
+
+tbl <- regulartable(stom_tab) %>%
+  flextable::set_caption(flextable::as_paragraph(as_chunk("The annual geometric mean value from the posterior distribution for the estimated consumptions of octopus by Bering Sea Pacific Cod. L95% and U95% are the lower and upper portions of the 95% confidence interval.", fp_text_default(font.family = "Times New Roman")))) %>%
+  flextable::font(fontname = "Times New Roman", part = "all")   %>%
+  flextable::fontsize(size = 10, part = "all")  %>%
+  flextable::set_formatter(year = function(x) sprintf("%s", x)) %>%
+  colformat_double(i=1:length(stom_tab$year),digits = 0) %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::align(align = "center") %>%
+  flextable::compose(i=1, j=1, value = flextable::as_paragraph(as_b("Year")),part = "header") %>%
+  flextable::compose(i=1, j=2, value = flextable::as_paragraph(as_b("Mean")),part = "header") %>%
+  flextable::compose(i=1, j=3, value = flextable::as_paragraph(as_b("L95%")),part = "header") %>%
+  flextable::compose(i=1, j=4, value = flextable::as_paragraph(as_b("U95%")),part = "header") %>%
+  flextable::border_remove() %>%
+  flextable::hline_top(part = "header")  %>%
+  flextable::hline_top() %>%
+  flextable::bg(j = 3:4, bg = "#f7f7f7", part = "all") %>%  # this provides the shading
+  flextable::hline_bottom()  %>%
+  padding(padding = .5, part = "all") %>%
+  # flextable::width(j = 1:9, width = 0.6) %>%
+  # set_table_properties(width = .9)
+  autofit()
+
+tbl
+
+```
+
+
+
+

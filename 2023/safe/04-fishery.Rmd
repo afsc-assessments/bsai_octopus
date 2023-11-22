@@ -1,48 +1,15 @@
 # Fishery 
 
-Brief description of fishery history  
-Description of management measures/unit(s)   
-Management history (including key changes which may have influenced assessment procedures; selectivity of commercial fishing gear; or distribution of catch by gear, area, or season.  
-Include a table of total catch, total ABC, total OFL, and total TAC, and associated management measures  
-Description of the current directed fishery (including gear types, seasons, major fishing locations)  
-Description of effort and CPUE  
-Information on discards of this stock or stock complex (from directed fishery for this stock or stock complex)  
+A full description of the fishery's history can be found in the 2020 BSAI octopus assessment [@Ormseth2020_assessment_octopus]. What follows are any recent significant changes to the fishery or management measures.
 
-## Description of the Directed Fishery
+*Directed Fishery*
 
-There is no federally-managed directed fishery for octopus in the BSAI. 
-The State of Alaska allows directed fishing for octopus in state waters under a special commissioner’s permit. 
-A small directed fishery in state waters around Unimak Pass and in the Aleutian Islands existed from 1988-1995; catches from this fishery were reportedly less than 8 t per year [@Fritz1997]. 
-In 2004, commissioner’s permits were given for directed harvest of Bering Sea octopus on an experimental basis (Karla Bush, ADF&G, personal communication). 
-Nineteen vessels registered for this fishery, and 13 vessels made landings totaling 4,977 octopus (84.6 t). 
-The majority of this catch was from larger pot boats during the fall season cod fishery (Sept.-Nov.). 
-Average weight of sampled octopus from this harvest was 14.1 kg. 
-The sampled catch was 68% males. 
-Only one vessel was registered for octopus in 2005. 
-Since 2006, few permits have been requested and catch of octopus in state waters has been incidental to other fisheries [@Bowers2010; @Sagalkin2011].
+There is no federally-managed directed fishery for octopus in the BSAI. The State of Alaska allows for directed (under a special commissioner’s permit) and incidental catch of octopus in state waters. Since 2006, the number of permits for direct octopus fishing has been declining. The catch of octopus in state waters has been predominately incidental [@Bevaart2022; @Nichols2022].
 
 
-### Catch Patterns
+*Incidental Catch*
 
-Octopus are caught incidentally throughout the BSAI in both state and federally-managed bottom trawl, longline, and pot fisheries. 
-Until around 2003, retention of octopus when caught was minor, because of a lack of commercial market. 
-Retained octopus were used and sold primarily for bait. 
-In 2004-2007 a commercial market for human consumption of octopus developed in Dutch Harbor, with ex-vessel prices running as high as $0.90/lb. 
-The main processor marketing food-grade octopus went out of business in 2009, decreasing demand; other processors continue to buy octopus for bait at ex-vessel prices in the
-$0.40 - $0.60/lb range. 
-The worldwide demand for food-grade octopus remains high (www.fao.org), so the possibility of increased future marketing effort for octopus exists.
-
-### Bycatch and Discards
-
-From 1992-2002 total incidental catch of octopus in federal waters was estimated from observed hauls [@Gaichas2004]. 
-Since 2003 the total octopus catch in federal waters (including discards) has been estimated using the NMFS Alaska Regional Office catch accounting system. 
-Incidental catch rates are presented in the data section. 
-The majority of both federal and state incidental catch of octopus continues to come from Pacific cod fisheries, primarily pot fisheries (**Table 22.2**; @Bowers2010; @Sagalkin2011]. 
-Some catch is also taken in bottom trawl fisheries for cod, flatfish, and pollock (**Table 22.2**). 
-**The overwhelming majority of catch in federal waters occurs around Unimak Pass in statistical reporting areas 519, 517, and 509 (Figure 22.1?**). 
-In recent years **(2018-2020), an increasing level of catch comes from the eastern Aleutian Islands.** 
-The species of octopus taken is not known, although size distributions suggest that the majority of the catch from pots is *E. dofleini* (see below).
+Octopus are caught incidentally throughout the BSAI in both state and federally-managed bottom trawl, longline, and pot fisheries. Since 2003, the total octopus catch in federal waters (including discards) has been estimated using the National Marine Fisheries Service (NMFS) Alaska Regional Office catch accounting system. Total incidental catch range from approximately 200-700 t with high year-to year variability (Table `r params$chapter`-\@ref(tab:tab-catch-OFL)). In 2011, the catch for octopus in BSAI (577 t) exceeded the OFL (528 t) resulting in NMFS closing the directed fishing for Pacific cod with pot gear in the BSAI on October 21, 2011. The following year, an alternative Tier 6 method for determining harvest levels was introduced. Since then, all catches have been nearly an order of magnitude below the recommended ABC (Table `r params$chapter`-\@ref(tab:tab-catch-OFL)).
 
 
-## Management Measures 
 

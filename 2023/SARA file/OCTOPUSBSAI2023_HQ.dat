@@ -1,0 +1,116 @@
+#Stock Assessment Results Archive (SARA) file for stocks managed under the North Pacific Fisheries Management Council
+#This form is only required for Tier 1-6 stocks in a full year, or Tier 1-3 stocks in a partial year 
+#There are four required sections to update: Assessment Summary, Fishing Mortality Estimates, Biomass Estimates, and Time Series Estimates with an optional fifth Survey Estimates section 
+#Please fill in the text (surrounded by " ") or data as values in the line after each field marked with a # and capitalized name (e.g., #STOCK, the next line should be "ATF") 
+#Note that several of the fields below may be static or only change occasionally, please see the SARA_HQ_Lookup Google sheet for more details
+#ASSESSMENT_SUMMARY -------------------------------------------------------------------------------------------------
+#STOCK
+"OCTOPUS"
+#STOCK_NAME
+"Giant octopus - Bering Sea / Aleutian Islands"
+#REGION
+"BSAI"
+#ASMT_TYPE
+"Operational"
+#ASMT_YEAR
+2023
+#ASMT_MONTH
+"Dec"
+#TIER
+"6"
+#NUM_SEXES
+NA           
+#NUM_FISHERIES
+NA
+#REC_MULT
+NA 
+#RECAGE
+NA        
+#COMPLEX
+"Yes"
+#LAST_DATA_YEAR
+2016
+#ASMT_MODEL_CATEGORY
+"1"
+#ASMT_MODEL
+"Predation-based estimate of M"
+#MODEL_VERSION
+"NA"
+#ENSEMBLE 
+"NA"
+#LEAD_LAB
+"AFSC"
+#POC_EMAIL
+"lee.cronin-fine@noaa.gov"
+#REVIEW_RESULT
+"Full acceptance"
+#CATCH_INPUT_DATA
+3
+#ABUNDANCE_INPUT_DATA
+2
+#BIOLOGICAL_INPUT_DATA
+1
+#SIZEAGE_COMP_INPUT_DATA
+1
+#ECOSYSTEM_LINKAGE
+1
+#FISHING_MORTALITY_ESTIMATES ----------------------------------------------------------------------------------------
+#F_YEAR
+2022
+#F_BASIS
+"Total catch"
+#F_UNIT
+"metric tons"
+#BEST_F_ESTIMATE
+251
+#F_LIMIT
+4769
+#F_LIMIT_BASIS
+"consumption by pacific cod (as a proxy for MxB)"
+#F_MSY
+NA
+#F_MSY_BASIS
+"consumption by pacific cod (as a proxy for MxB)"
+#BIOMASS_ESTIMATES --------------------------------------------------------------------------------------------------
+#B_YEAR
+"NA"
+#B_BASIS
+"NA"
+#B_UNIT
+"NA"
+#BEST_B_ESTIMATE
+"NA"
+#LOWER_B_ESTIMATE
+"NA"
+#UPPER_B_ESTIMATE
+"NA"
+#ESTIMATE_METHOD
+"NA"
+#INTERVAL_SIZE
+"NA"
+#B_MSY
+"NA"
+#B_MSY_BASIS
+"NA"
+#TIME_SERIES_ESTIMATES ----------------------------------------------------------------------------------------------
+#FISHERYYEAR
+1997  1998  1999  2000  2001  2002  2003  2004  2005  2006  2007  2008  2009  2010  2011  2012  2013  2014  2015  2016  2017  2018  2019  2020  2021  2022  2023
+#AGE
+"NA"
+#RECRUITMENT
+"NA"
+#SPAWNBIOMASS
+"NA"
+#TOTALBIOMASS
+"NA"
+#TOTFSHRYMORT
+"NA"
+#TOTALCATCH
+249  190  326  419  227  374  277  569  339  350  171  215  73  185  577  137  220  429  441  593  282  290  268  691  170  251  120
+#SURVEYDESC
+"no primary surveys"
+#STOCKNOTES
+"SAFE report indicates that this stock was not subjected to overfishing in 2022 and is neither overfished nor approaching a condition of being overfished in 2023."
+#SURVEY_ESTIMATES [OPTIONAL] ------------------------------------------------------------------------------------------
+#" " 
+ 

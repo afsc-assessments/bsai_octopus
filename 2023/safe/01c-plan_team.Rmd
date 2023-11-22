@@ -3,30 +3,36 @@
 <br>
 
 ```{r}
-ptdata <- safe::ptdata
 
-    flextable::font(
-    flextable::footnote( flextable::flextable(ptdata), 
-                         j=3, part="header", ref_symbols = "1", 
-                        value = flextable::as_paragraph('Total biomass (age 4+) estimates from age-structured model.')),
+year <- 2023
+
+sum_tbl <- read.csv(here(year,"safe", "data",paste(year,"Summary_for_Plan_Team_Octopus.csv", sep = "-")))
+
+# option for having a think border line
+big_border <- officer::fp_border(width = 2)
+
+tbl_sum <-  flextable::font(
+    flextable::footnote( flextable::flextable(sum_tbl), 
+                         i=2, j=6, part="body", ref_symbols = "*", 
+                        value = flextable::as_paragraph(paste(year," catch as of ", last_cat_date, ", sourced ", cur_yr_date, " from the NMFS Alaska Regional Office using the AKFIN database (http://www.akfin.org)."))),
         fontname = "Times New Roman",
-        part = "all") %>% 
-      flextable::footnote(i=2, j=7, part="body", ref_symbols = "2", 
-                        value = flextable::as_paragraph(
-                              flextable::as_chunk(paste0(paste0('Current as of ', date, ' . Source: NMFS Alaska Regional Office Catch Accounting System
-via the AKFIN database (http://www.akfin.org).'))))) %>% 
-      flextable::set_formatter(Year = function(x) sprintf("%s", x)) %>% 
-      flextable::merge_at(i=1:4, j=1) %>% 
-      flextable::hrule(rule = "exact") %>% 
-      flextable::hline_top(part='all') %>% 
-      flextable::hline_bottom() %>% 
-      flextable::fix_border_issues()
-      
+        part = "all") %>%
+   flextable::set_formatter(Year = function(x) sprintf("%s", x)) %>% 
+   flextable::merge_at(i=1:4, j=1) %>% 
+   flextable::hrule(rule = "exact") %>% 
+   flextable::hline_top(border = big_border, part='all') %>% 
+   flextable::hline_bottom(border = big_border) %>%
+   flextable::width(j = 1, width = 1) %>%
+   flextable::bold(i = 1, part = "header") %>%
+  flextable::fix_border_issues()
+tbl_sum
+
+    
 ```
 
 <br>
 
-```{r}
+```{r eval=FALSE, include=FALSE}
 ptdata2 <- safe::ptdata2
 
 flextable::font(

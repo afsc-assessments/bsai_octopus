@@ -4,13 +4,14 @@ params:
   species: "octopus"
   species_complex: "yes"
   area: "Bering Sea and Aleutian Islands"
-  tier: 3
-author: "Lee Cronin-Fine, Benjamin C. Williams, and Sandra Lowe"
+  tier: 6
+  year: 2023
+author: "Lee Cronin-Fine, Benjamin C. Williams, Kerim Aydin"
 date: "November 2023"
 
 # don't do anything below this line unless you are cool with the consequences
 output:
-  bookdown::html_document2:
+  bookdown::word_document2:
      reference_docx: "template.docx"
      toc: false
      number_sections: false
@@ -39,9 +40,11 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.pos = 
 
 ```{r}
 if(params$species_complex=="no"){
-   title = paste0(params$chapter, ". Assessment of the ", tools::toTitleCase(params$species), " Stock in the ", params$area)
+  titl1 <- paste0("Assessment of the ", tools::toTitleCase(params$species), " Stock in the ", params$area)
+   title = paste0(params$chapter, ". ", titl1)
   } else {
-    title = paste0(params$chapter, ". Assessment of the ", tools::toTitleCase(params$species), " Stock Complex in the ", params$area)  
+    titl1 <- paste0("Assessment of the ", tools::toTitleCase(params$species), " Stock Complex in the ", params$area)
+    title = paste0(params$chapter, ". ", titl1)
   }
 
 
@@ -54,60 +57,107 @@ title: `r title`
 ```{r load, warning=F, message=F}
 # load
 library(safe)
+library(tidyverse)
+library(dplyr)
+library(here)
 # globals
 species = params$species
-year = 2022
-date = 'October 22, 2022'
-model = "base"
-end_proj = year + 15
-best_f = 0.0641 # from the best_f function in groundfishr package
-ofl = 8000 # placeholder while i figure things out
+year = params$year
+cur_yr_date <- readLines(here::here(year,"data","raw", "data_last_called.out"))
+cur_yr_date <- unlist(strsplit(cur_yr_date,split = ": "))[2]
 
-# todo: read from proj output
-c1 = 2842 # estimated catch in current year
-c2 = 3489 # proj catch year + 1
-c3 = 2884 # proj catch year + 2
+# read in the dates of last data pull and the last catch week
+cat_wk_file <- readLines(here::here(year,"data","raw", "data_last_catch_date.out"))
+last_cat_date <- unlist(strsplit(cat_wk_file[1],split = ": "))[2]
+last_cat_day <- unlist(strsplit(last_cat_date[1],split = ","))[1]
+
+
+temp_dat <- read.csv(here::here(year,"safe","data","tier6.csv"))#  %>%
+  # filter(item == "OFL (t)")
+
+OFL_vec <- temp_dat[grep("OFL",temp_dat$item),]  
+OFL_val <- OFL_vec$y3
+
+mABC_vec <- temp_dat[grep("maxABC",temp_dat$item),2:5]
+
+# Average Octopus biomass from each survey
+avg_slope <- as.numeric(readLines(here::here(year, "data","output",paste(year,"EBS_slope_octopus_avearge.out",sep = "_"))))
+avg_shelf <- as.numeric(readLines(here::here(year, "data","output",paste(year,"EBS_shelf_octopus_avearge.out",sep = "_"))))
+avg_AI <- as.numeric(readLines(here::here(year, "data","output",paste(year,"AI_octopus_avearge.out",sep = "_"))))
+
+ebs_shelf <- read.csv(here::here(year, "data","output",paste(year,"octopus_EBS_shelf_survey.csv",sep = "_")))
+
+cur_ebs_shelf <- ebs_shelf$total_biomass[grep(year,ebs_shelf$year)]
+prior_ebs_shelf <- ebs_shelf$total_biomass[grep(year-1,ebs_shelf$year)]
+ch_ebs_shelf <- round(abs((cur_ebs_shelf-prior_ebs_shelf)/prior_ebs_shelf)*100,0)
+ch_avg_ebs_shelf <- round(abs((cur_ebs_shelf-avg_shelf)/avg_shelf)*100,0)
+
+# catch
+cat_val <- read.csv(here::here(year,"data","output",paste(year,"octopus_total_catch_by_target.csv", sep = "_")))
+cur_cat <- cat_val$Total[grep(year,cat_val$Year)]
+prior_cat <-cat_val$Total[grep(year-1,cat_val$Year)]
+
+# Catch limits
+cat_lim_val <- read.csv(here::here(year,"data", "user_inputs","specs.csv"))
+prior_OFL <- cat_lim_val$OFL[grep(year-1,cat_lim_val$Year)]
+
+# date = 'October 22, 2022'
+# model = "base"
+# end_proj = year + 15
+# best_f = 0.0641 # from the best_f function in groundfishr package
+# ofl = 8000 # placeholder while i figure things out
+# 
+# # todo: read from proj output
+# c1 = 2842 # estimated catch in current year
+# c2 = 3489 # proj catch year + 1
+# c3 = 2884 # proj catch year + 2
 # todo: build a function/switch to auto run the tier(a/b) - also for overfishing/overfished
 ```
+
+\
+This report may be cited as:\
+Cronin-Fine. L, Williams. B. C. and Aydin. K, `r year`. `r titl1`. North Pacific Fishery Management Council, Anchorage, AK. Available from <https://www.npfmc.org/library/safe-reports/>
 
 ```{r, child="01-summary.Rmd", eval = T}
 ```
 
-```{r, child="02-responses.Rmd", eval = F}
+```{r, child="02-responses.Rmd", eval = T}
 ```
 
-```{r, child="03-intro.Rmd", eval = F}
+```{r, child="03-intro.Rmd", eval = T}
 ```
 
-```{r, child="04-fishery.Rmd", eval = F}
+```{r, child="04-fishery.Rmd", eval = T}
 ```
 
-```{r, child="05-data.Rmd", eval = F}
+```{r, child="05-data.Rmd", eval = T}
 ```
 
-```{r, child="06-model.Rmd", eval = F}
+```{r, child="06-model.Rmd", eval = T}
 ```
 
-```{r, child="07-results.Rmd", eval = F}
+```{r, child="07-results.Rmd", eval = T}
 ```
 
-```{r, child="08-abc.Rmd", eval = F}
+```{r, child="08-abc.Rmd", eval = T}
 ```
 
-```{r, child="09-ecosystem.Rmd", eval = F}
+```{r, child="09-ecosystem.Rmd", eval = T}
 ```
 
-```{r, child="10-gaps.Rmd", eval = F}
+```{r, child="10-gaps.Rmd", eval = T}
 ```
+
 \pagebreak
 \allsectionsfont{\centering}
 # References
 <div id="refs"></div>
+\pagebreak
 
-```{r, child="11-tables.Rmd", eval = F}
+```{r, child="11-tables.Rmd", eval = T}
 ```
 
-```{r, child="12-figures.Rmd", eval = F}
+```{r, child="12-figures.Rmd", eval = T}
 ```
 
 ```{r, child="13-append_a.Rmd", eval = F}

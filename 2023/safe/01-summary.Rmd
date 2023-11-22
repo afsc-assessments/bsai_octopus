@@ -1,51 +1,33 @@
 # Executive Summary
+Through 2010, octopuses were managed as part of the Bering Sea/Aleutian Islands (BSAI) "other species" complex, along with sharks, skates, and sculpins. Historically, catches of the other species complexes were well below TAC. Due to increasing market values, retention of species within the other species complex increased. Beginning in 2011, an amendment to the BSAI fisheries management plan provided separate management for sharks, skates, sculpins, and octopus and set catch limits for each species group. Initially, catch limits for octopus were set using Tier 6 methods based on the maximum historical incidental catch rate. Since 2012, a methodology based on consumption of octopus by Pacific cod (*Gadus macrocephalus*) has been used to set catch limits  (see @conners2016assessment for methodological details). 
 
-Through 2010, octopuses were managed as part of the BSAI "other species" complex, along with sharks, skates, and sculpins. 
-Historically, catches of the other species complex were well below TAC and retention of other species was small. 
-Due to increasing market values, retention of some of the other species complex members increased. 
-Beginning in 2011, the BSAI fisheries management plan was amended to provide separate management for sharks, skates, sculpins, and octopus and set separate catch limits for each species group. 
-Catch limits for octopus for 2011 were set using Tier 6 methods based on the maximum historical incidental catch rate. Since 2012, a methodology based on consumption of octopus by Pacific cod has been in used to set catch limits.
+This year’s assessment is an operational update, meaning new consumption data was provided through 2023 to determine catch limits using the previous assessment's model/methodology. Alternative models/methodologies were not considered. At least eight species of octopus are found in the BSAI though in this update assessment, all octopus species are grouped into a single assemblage. The species composition of the octopus community is not well documented, but data indicate that the giant Pacific octopus (*Enteroctopus dofleini*) is the most common (Tables `r params$chapter`-\@ref(tab:tab-AI-survey),-\@ref(tab:tab-shelf-survey),-\@ref(tab:tab-slope-survey)). Octopuses are taken as incidental catch in trawl, longline, and pot fisheries with a portion retained and sold for human consumption or bait. The BSAI trawl surveys produce highly variable biomass estimates for octopus (Figure `r params$chapter`-\@ref(fig:fig-survey-bio)). 
 
-In this assessment, all octopus species are grouped into one assemblage. 
-At least nine species of octopus are found in the BSAI. 
-The species composition of the octopus community is not well documented, but data indicate that the giant Pacific octopus *Enteroctopus dofleini* is most abundant in shelf waters and predominates in commercial catch.
-Therefore, this assessment primarily focuses on the giant Pacific octopus. 
-Octopuses are taken as incidental catch in trawl, longline, and pot fisheries throughout the BSAI; a portion of the catch is retained or sold for human consumption or bait. 
-The highest octopus catch rates are from Pacific cod fisheries in the reporting areas around Unimak Pass. 
-The Bering Sea and Aleutian Island trawl surveys produce estimates of biomass for octopus, but these estimates are highly variable and do not reflect the same sizes of octopus caught by industry.
-Examination of size frequency from survey and fishery data shows that both commercial and survey trawls catch predominantly small animals (<5 kg), while commercial pot gear catches or retains large animals (10-20 kg). 
-In general, the state of knowledge about octopus in the BSAI is increasing, but there is no reliable estimate of octopus biomass.
+
 
 ## Summary of Changes in Assessment Inputs
 
-<!-- List of changes (if any) in the input data, including estimated catches assumed for the current year and projected catches for current year + 1 and current year + 2. -->
+*Changes in Input Data*
 
-<!-- List of changes (if any) in the assessment methodology.  -->
-<!-- **This is one of the most important sections of the SAFE report**.  -->
-<!-- Common mistakes in this section include: 1) listing something that *has not* changed, and 2) not listing something that *has* changed. -->
+1. The calculation of annual and long-term average consumption rates has been updated using 13,614 additional Pacific cod stomach samples collected from 2012-2013 and 2016-2023.
 
-
-1) This assessment methodology has not changed from previous assessments, but the calculation of annual
-and long-term average consumption rates has been updated using additional Pacific cod diet
-data from 2016-2022.
-Over ______ stomach samples were added to the data set.
-The more recent data and estimates are used to derive updated catch limits.
-The detailed methodology for these calculations can be found in the 2016 assessment [@conners2016assessment].
-
-2) Incidental catch data have been updated through ________, 2023.
-
-3) Biomass estimates from the *Years* EBS shelf trawl surveys, and the *Years* Aleutian Islands trawl survey are presented.
-The last BS slope survey was conducted in 2016.
-
+*Changes in Assessment Methodology* \
+There have been no changes to the assessment methodology
 
 
 ## Summary of Results
 
-List of changes (if any) in the input data, including estimated catches assumed for the current year and projected catches for current year + 1 and current year + 2.
-List of changes (if any) in the assessment methodology. This is one of the most important sections of the SAFE report.  Common mistakes in this section include: 1) listing something that has not changed, and 2) not listing something that has changed.
 
-```{r, child= "01a-main_table.Rmd", eval = F}
+
+For `r year + 1`, the recommended maximum allowable ABC from the Tier 6 specifications is `r format(round(mABC_vec[3]), big.mark=",")` t. Reference values for octopus are summarized in the following table, with the recommended ABC and OFL values for `r year + 1` in bold.
+
+```{r, child= "01a-main_table.Rmd", eval = T}
 
 ```
 
+The BSAI octopus complex is not currently subject to overfishing because the `r year-1` catch, the most recent completed year, of `r format(round(prior_cat), big.mark=",")` t is smaller than the `r year-1` OFL of `r format(round(prior_OFL), big.mark=",")` t. 
 
+
+```{r, child= "01c-plan_team.Rmd", eval = F}
+
+```

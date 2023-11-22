@@ -107,5 +107,11 @@ srv %>%
 
 dev.off()
 
-
+# test <- srv %>% 
+#   tidytable::mutate(cv = sqrt(var) / biomass * 100) %>% 
+#   tidytable::mutate(area = tidytable::case_when(area_id==99900 ~ "EBS_shelf",
+#                                                 area_id==99905 ~ "EBS_slope",
+#                                                 area_id==99904 ~ "AI")) %>% 
+#   tidytable::pivot_wider(names_from = area, values_from = c(biomass, cv)) %>% 
+#   tidytable::select(-area_id, -var) -> survey
 

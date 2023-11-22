@@ -1,6 +1,86 @@
+
 ```{r}
-# using built in example data 
-# FLAG - needs update
-data <- safe::tier6
-safe::main_table(data, year, tier=6, c1, c2, c3)
+
+
+# data <- safe::tier6
+year <- 2023
+data <- read.csv(here::here(year,"safe","data","tier6.csv"))
+tier <- params$tier
+
+dat2 <- tail(data, 3)
+dat3 <- as.data.frame(matrix(as.numeric(unlist(data[2:4,2:5])), nrow = 3, ncol = 4))
+dat4 <- cbind(data[2:4,1],dat3)
+
+tbl <- flextable::flextable(dat4) %>%
+  flextable::font(fontname = "Times New Roman", part = "all") %>%
+  flextable::fontsize(size = 11, part = "all")  %>%
+  flextable::add_body_row(top = T, values = c("","","","","")) %>%
+  flextable::add_body_row(top = F, values = c(dat2[1,1], dat2[1,2],dat2[1,3],dat2[1,4],dat2[1,5])) %>%
+  flextable::add_body_row(top = F, values = c(dat2[2,1], dat2[2,2],dat2[2,3],dat2[2,4],dat2[2,5])) %>%
+  flextable::add_body_row(top = F, values = c(dat2[3,1], dat2[3,2],dat2[3,3],dat2[3,4],dat2[3,5])) %>%
+  flextable::add_header_row(value = c( "", "a", "b"), colwidths = c(1,2,2)) %>%
+    flextable::compose(i=2, j=1,
+                       value = flextable::as_paragraph( "Quantity/Status"),
+                       part = "header") %>%
+    flextable::compose(i = 1, j = 2:3,
+                       value = flextable::as_paragraph( "As estimated or " , flextable::as_i("specified last"), " year for:"),
+                       part = "header") %>%
+    flextable::compose(i = 1, j = 4:5,
+                       value = flextable::as_paragraph( "As estimated or " , flextable::as_i("recommended this"), " year for:"),
+                       part = "header") %>%
+    flextable::compose(i = 2, j = 2,
+                       value = flextable::as_paragraph(as.character(year)), part = "header") %>%
+    flextable::compose(i = 2, j = 3:4,
+                       value = flextable::as_paragraph(flextable::as_chunk(as.character(year + 1))),
+                       part = "header") %>%
+    flextable::compose(i = 2, j = 5,
+                       value = flextable::as_paragraph(flextable::as_chunk(as.character(year + 2))),
+                       part = "header") %>%
+  flextable::compose(i=1, j=1,
+                       value = flextable::as_paragraph( "Tier"),
+                       part = "body") %>%
+    flextable::align(align = "center", part = "header") %>%
+    flextable::align(j=2:5, align = "center") %>%
+    flextable::align(j = 1, part = "header", align="left") %>%
+    flextable::bold(i = 2, j = 1, part = "header") %>%
+    flextable::bold(i = 2, j = 4, part = "header") %>%
+    flextable::bold(i = c(2,4), j = 4, part = "body") %>%
+    flextable::width(j = 1, width = 2.5) %>%
+    flextable::width(j = 2:5, width = 0.65) %>%
+    flextable::bg(j = 2, bg = "#f7f7f7", part = "all") %>%
+    flextable::bg(j = 3, bg = "#f7f7f7", part = "all") %>%
+    flextable::border_remove()  %>%
+    flextable::hline_top(part = "header") %>%
+    flextable::hline_top() %>%
+    flextable::vline_right(part = "body") %>%
+    flextable::vline_right(part = "header") %>%
+    flextable::vline_left(part = "body") %>%
+    flextable::vline_left(part = "header")
+
+tbl %>%
+      flextable::compose(i = 1, j = 2:5, value = flextable::as_paragraph(as.character(tier)), part = "body") %>%
+      flextable::compose(i = 3, j = 1, value = flextable::as_paragraph(flextable::as_i("max"),"ABC (t)"), part = "body") %>%
+      flextable::compose(i = 5, j = 1, value = flextable::as_paragraph("")) %>%
+      flextable::compose(i = 5, j = 2:3,
+                         value = flextable::as_paragraph( "As determined " , flextable::as_i("last"), " year for:")) %>%
+      flextable::compose(i = 5, j = 4:5,
+                         value = flextable::as_paragraph( "As determined " , flextable::as_i("this"), " year for:")) %>%
+  # flextable::compose(i=7, j=2, value = flextable::as_paragraph("n/a")) %>%
+  flextable::compose(i=7, j=c(2,4), value = flextable::as_paragraph("No")) %>%
+  flextable::compose(i=7, j=c(3,5), value = flextable::as_paragraph("n/a")) %>%
+  flextable::colformat_double(i = c(2:4), j = 2:5, big.mark=",", digits = 0, na_str = "N/A") %>%
+      flextable::merge_h(i=5, part = "body") %>%
+      flextable::align(align = "center", part = "header") %>%
+      flextable::align(j=2:5, align = "center", part = "body") %>%
+      flextable::align(j = 1, part = "header", align="left") %>%
+      flextable::hline(i=4) %>%
+      flextable::hline(i=6) %>%
+      flextable::hline(i=7) %>%
+      # flextable::bold(i = 6:7, j = 4, part = "body") %>%
+      flextable::fix_border_issues() -> tbl
+
+tbl
+
+
 ```
+

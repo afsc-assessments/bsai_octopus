@@ -1,5 +1,5 @@
 # Data Gaps and Research Priorities
 
-## Life history and habitat utilization
+A full description of the data gaps and research priorities can be found in the 2020 BSAI octopus assessment [@Ormseth2020_assessment_octopus]. What follows is an abbreviation from the 2020 BSAI octopus assessment.
 
-## Assessment Data
+Though there have been efforts to improve the collection of basic octopus data, there is still a lot that is unknown. The areas of needed/ongoing research include improving aging methods, determining octopus species composition in catch and survey, determining octopus distribution especially when reproducing and producing reliable fisheries independent biomass estimates.
